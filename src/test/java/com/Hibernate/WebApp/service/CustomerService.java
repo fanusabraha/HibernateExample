@@ -10,7 +10,7 @@ public class CustomerService {
 
     @Autowired
     private CustomerRepository customerRepository;
-    public  <Customers> FindAll(){
-        return customerRepository;
-    }
+//    public  <Customers> FindAll(){
+//        return customerRepository;
+//    }
 }

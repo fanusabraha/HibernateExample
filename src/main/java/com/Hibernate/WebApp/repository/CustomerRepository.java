@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CustomerRepository extends JpaRepository<Customers,Long> {
 
-    public <Customers> findAll(){
-        return findAll();
-    }
+//    public <Customers> findAll(){
+//        return findAll();
+//    }
 
 }
