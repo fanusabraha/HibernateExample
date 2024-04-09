@@ -1,8 +1,8 @@
 package com.Hibernate.WebApp.domain;
 import jakarta.persistence.*;
 @Entity
-@Table (name= "User")
-public class Customers {
+@Table (name= "Users")
+public class Customer {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long UserId;
     @Column(length= 100)
