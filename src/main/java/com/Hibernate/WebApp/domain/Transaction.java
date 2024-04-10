@@ -13,8 +13,10 @@ public class Transaction {
     @Column(length = 1)
     private String type;
 
-    @ManyToOne()
+    @ManyToOne() @JoinColumn(name = "account_id")
     private Account account;
+    // joinColumn  is used for preventing name extensions eg account_accountid how jpa would automatically do it
+
     public long getTransactionId() {
         return transactionId;
     }
@@ -45,5 +47,13 @@ public class Transaction {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
     }
 }

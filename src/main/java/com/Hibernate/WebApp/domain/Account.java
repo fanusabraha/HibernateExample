@@ -11,9 +11,12 @@ public class Account {
     private long accountID;
     @Column(length = 100)
     private String accoutName;
-    // mappedby is used for
-    @OneToMany (mappedby = "accountId")
+
+    @OneToMany (mappedBy = "account")
     private List <Transaction> transaction;
+
+    // mappedby is used for referencing the variable name which is already identified in the child class
+
     public long getAccountID() {
         return accountID;
     }
