@@ -9,19 +9,18 @@
     <div>
         <--! action is for the dirctory for eg /register-->
         <form action="" method="post">
-            <input type=text th:field= "${customers.id}">
             <div>
                 <label>
-                    <input type="text" th:field = "${customers.name}">
+                    <input type="text" th:field ="${customers.username}">
                 </label>
             </div>
             <div>
                 <label>
-                    <input type="text" th:field = "${customers.username}">
+                    <input type="text" th:field ="${customers.name}">
                 </label>
             </div>
             <div>
-                <input type="button" value="create user">
+                <input type="submit" value="create user">
             </div>
 
         </form>

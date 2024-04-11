@@ -35,9 +35,9 @@ public class CustomerController {
     public String GetCreateCustomer (ModelMap map){
         map.put("customers",new Customer());
         return "register";}
+    // Customer customer is to be posted and saved
     @PostMapping("/customers/register")
-    public String createCustomer (ModelMap map, Customer customer){
-        Customer register = customerService.createCustomer(customer);
-        map.put("customers",register);
-        return "redirect:/register";}
+    public String createCustomer (Customer customer){
+        customerService.createCustomer(customer);
+        return "redirect:/customers/register";}
 }
