@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 @Entity
 public class Adress {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long AdressId;
     private String adress1;
     private String adress2;
     private String city;
@@ -16,12 +16,12 @@ public class Adress {
     @JoinColumn(name = "customer_adress")
     private Customer customer;
 
-    public long getId() {
-        return id;
+    public long getAdressId() {
+        return AdressId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setAdressId(long adressId) {
+        this.AdressId = adressId;
     }
 
     public String getAdress1() {

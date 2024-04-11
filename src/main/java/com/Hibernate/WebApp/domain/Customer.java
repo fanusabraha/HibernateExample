@@ -18,7 +18,7 @@ public class Customer {
     @ManyToMany()   @JoinTable(name="customer_account",
             joinColumns = @JoinColumn(name = "customer_id"),
             inverseJoinColumns = @JoinColumn(name = "account_id"))
-    private List<Account> account = new ArrayList<>();
+    private List<Account> accounts = new ArrayList<>();
 
     //Join Table should be on the parent side ManytoMany, first ID from parent class and the inverse from child class
     public long getUserId() {
@@ -53,11 +53,11 @@ public class Customer {
         this.adress = adress;
     }
 
-    public List<Account> getAccount() {
-        return account;
+    public List<Account> getAccounts() {
+        return accounts;
     }
 
-    public void setAccount(List<Account> account) {
-        this.account = account;
+    public void setAccounts(List<Account> accounts) {
+        this.accounts = accounts;
     }
 }

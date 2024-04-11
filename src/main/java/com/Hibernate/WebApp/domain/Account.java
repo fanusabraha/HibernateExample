@@ -9,22 +9,22 @@ import java.util.List;
 @Table(name = "accounts")
 public class Account {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long accountID;
+    private long accountId;
     @Column(length = 100)
     private String accoutName;
-    @ManyToMany(mappedBy = "account")
+    @ManyToMany(mappedBy = "accounts")
     private List<Customer> customer = new ArrayList<>();
     @OneToMany (mappedBy = "account")
     private List <Transaction> transaction= new ArrayList<>();
 
     // mappedby is used for referencing the variable name which is already identified in the child class
 
-    public long getAccountID() {
-        return accountID;
+    public long getAccountId() {
+        return accountId;
     }
 
-    public void setAccountID(long accountID) {
-        this.accountID = accountID;
+    public void setAccountId(long accountId) {
+        this.accountId = accountId;
     }
 
     public String getAccoutName() {
