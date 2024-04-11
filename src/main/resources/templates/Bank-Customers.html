@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CustomersList</title>
+</head>
+<body>
+<h1> This is a list of Bank-Members </h1>
+
+    <div th:each="bankers: ${customers}">
+        <p> ID  <span  th:text="${bankers.userId}" >  </span>  </p>
+        <p> name <span  th:text="${bankers.name}" > </span>   </p>
+        <p> username <span  th:text="${bankers.username}" > </span>  </p>
+        <hr>
+    </div>
+
+</body>
+</html>
