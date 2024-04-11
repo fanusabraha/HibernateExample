@@ -19,5 +19,9 @@ public class CustomerService {
         Optional <Customer> findById =  customerRepository.findById(id);
         return findById.orElse(new Customer());
     }
+    // the save method saves existing and also creates a new one too
+    public Customer createCustomer(Customer customer){
+        return customerRepository.save(customer);
+    }
 
 }
