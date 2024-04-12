@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1> This is a list of Bank-Members </h1>
-    <!--we use here (if) to update the user if its one like /customers/2
+    <!--we use here (if) to update the user if its by one id like /customers/2
      otherwise show all the users when requested by / customers-->
     <div th:if="${#lists.size(customers) ==1}">
         <!-- this is for updating the customer we used if customer >1 -->
@@ -25,6 +25,11 @@
                 <input type="submit" value="update user">
             </div>
         </form>
+        <!-- to delete a user, new div with new delete button
+        bc the above one reposts but redirecting to web Url using @ is needed-->
+        <div>
+            <input action="@{customers/{Id}/delete} (Id= newCustomer.userId)" type="button" value="delete user">
+        </div>
 
     </div>
     <div th:unless ="${#lists.size(customers) ==1}" th:each="bankers: ${customers}">

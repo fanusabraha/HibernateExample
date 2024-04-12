@@ -46,7 +46,7 @@ public class CustomerController {
 
     // updating existing customer
     @PostMapping("/customers/{Id}")
-    public String updateExistingCustomer (@PathVariable Long Id, Customer customer){
+    public String updateExistingCustomer (Customer customer){
         customerService.createCustomer(customer);
         return "redirect:/customers/" + customer.getUserId();}
 }
