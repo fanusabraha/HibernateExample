@@ -6,12 +6,33 @@
 </head>
 <body>
 <h1> This is a list of Bank-Members </h1>
+    <!--we use here (if) to update the user if its one like /customers/2
+     otherwise show all the users when requested by / customers-->
+    <div th:if="${#lists.size(customers) ==1}">
+        <!-- this is for updating the customer we used if customer >1 -->
+        <form action="" method="post" >
+            this is only one user
+            <div> Username
+                <input type="text" th:field ="${newCustomer.username}">
+            </div>
+            <div> name
+                <input type="text" th:field ="${newCustomer.name}">
+            </div>
+            <div> Password
+                <input type="password" th:field ="${newCustomer.password}">
+            </div>
+            <div>
+                <input type="submit" value="update user">
+            </div>
+        </form>
 
-    <div th:each="bankers: ${customers}">
-        <p> ID  <span  th:text="${bankers.userId}" >  </span>  </p>
-        <p> name <span  th:text="${bankers.name}" > </span>   </p>
-        <p> username <span  th:text="${bankers.username}" > </span>  </p>
-        <hr>
+    </div>
+    <div th:unless ="${#lists.size(customers) ==1}" th:each="bankers: ${customers}">
+        <span  th:text="${bankers.userId}" >  </span>
+        <span  th:text="${bankers.name}" > </span>
+        <span  th:text="${bankers.password}" type="password"> </span>
+        <span  th:text="${bankers.username}" > </span>
+        <span>
     </div>
 
 </body>

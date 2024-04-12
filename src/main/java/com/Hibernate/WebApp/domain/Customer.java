@@ -9,6 +9,7 @@ import java.util.List;
 public class Customer {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long UserId;
+    private String password;
     @Column(length= 100)
     private String name;
     @Column (length = 100)
@@ -27,6 +28,14 @@ public class Customer {
 
     public void setUserId(long userId) {
         UserId = userId;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getName() {

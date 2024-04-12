@@ -7,23 +7,24 @@
 <body>
 <h1> Register here to become Bank-Member</h1>
     <div>
-        <--! action is for the dirctory for eg /register-->
+        <!-- action is for the dirctory for eg /register-->
         <form action="" method="post">
-            <div>
-                <label>
+            <div> Username
                     <input type="text" th:field ="${customers.username}">
-                </label>
             </div>
-            <div>
-                <label>
+            <div> name
                     <input type="text" th:field ="${customers.name}">
-                </label>
+            </div>
+            <div> Password
+                <input type="password" th:field ="${customers.password}">
             </div>
             <div>
                 <input type="submit" value="create user">
             </div>
 
+
         </form>
     </div>
+
 </body>
 </html>

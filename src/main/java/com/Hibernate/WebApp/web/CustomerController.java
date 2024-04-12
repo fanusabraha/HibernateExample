@@ -27,6 +27,9 @@ public class CustomerController {
     public String findById (ModelMap map, @PathVariable Long id){
         Customer oneCustomer = customerService.findById(id);
         map.put("customers",oneCustomer);
+        // this is for the updating model
+        map.put("newCustomer",oneCustomer);
+
         return "Bank-Customers";}
 
     // a new class can be created for this GetMapping
@@ -40,4 +43,10 @@ public class CustomerController {
     public String createCustomer (Customer customer){
         customerService.createCustomer(customer);
         return "redirect:/customers/register";}
+
+    // updating existing customer
+    @PostMapping("/customers/{Id}")
+    public String updateExistingCustomer (@PathVariable Long Id, Customer customer){
+        customerService.createCustomer(customer);
+        return "redirect:/customers/" + customer.getUserId();}
 }
