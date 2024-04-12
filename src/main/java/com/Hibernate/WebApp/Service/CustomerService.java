@@ -15,14 +15,17 @@ public class CustomerService {
     public List<Customer> findAll(){
         return customerRepository.findAll();
     }
-    public Customer findById(Long id){
-        Optional <Customer> findById =  customerRepository.findById(id);
+    public Customer findById(Long UserId){
+        Optional <Customer> findById =  customerRepository.findById(UserId);
         return findById.orElse(new Customer());
     }
     // the save method saves existing and also creates a new one too
-    public Customer createCustomer(Customer customer){
-        return customerRepository.save(customer);
+    public void createCustomer(Customer customer){
+        customerRepository.save(customer);
     }
 
 
+    public void deleteCustomer(long id) {
+        customerRepository.deleteById(id);
+    }
 }

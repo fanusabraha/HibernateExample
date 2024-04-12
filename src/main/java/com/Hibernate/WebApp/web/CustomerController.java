@@ -49,4 +49,10 @@ public class CustomerController {
     public String updateExistingCustomer (Customer customer){
         customerService.createCustomer(customer);
         return "redirect:/customers/" + customer.getUserId();}
+
+    // deleting a customer
+    @PostMapping("/customers/{Id}/delete")
+    public String deleteCustomer (@PathVariable long Id){
+        customerService.deleteCustomer(Id);
+        return "redirect:/customers";}
 }

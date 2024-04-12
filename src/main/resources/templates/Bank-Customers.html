@@ -26,10 +26,12 @@
             </div>
         </form>
         <!-- to delete a user, new div with new delete button
-        bc the above one reposts but redirecting to web Url using @ is needed-->
-        <div>
-            <input action="@{customers/{Id}/delete} (Id= newCustomer.userId)" type="button" value="delete user">
-        </div>
+        bc the above one reposts but redirecting to web Url using @ is needed,
+        Id in bracket is defining what the meaning of the value,
+        we put th to let know that its a url-->
+        <form   th:action="@{/customers/{Id}/delete (Id= ${newCustomer.userId})}" method="post">
+            <input  type="submit" value="delete user">
+        </form>
 
     </div>
     <div th:unless ="${#lists.size(customers) ==1}" th:each="bankers: ${customers}">
@@ -37,7 +39,7 @@
         <span  th:text="${bankers.name}" > </span>
         <span  th:text="${bankers.password}" type="password"> </span>
         <span  th:text="${bankers.username}" > </span>
-        <span>
+
     </div>
 
 </body>
