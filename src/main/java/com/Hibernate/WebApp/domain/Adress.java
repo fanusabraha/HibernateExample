@@ -13,7 +13,7 @@ public class Adress {
     private String country;
     @OneToOne ()
     @MapsId
-    @JoinColumn(name = "customer_adress")
+    @JoinColumn(name = "customer_address_Id")
     private Customer customer;
 
     public long getAdressId() {

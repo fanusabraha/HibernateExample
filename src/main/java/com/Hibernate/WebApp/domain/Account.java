@@ -11,7 +11,7 @@ public class Account {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long accountId;
     @Column(length = 100)
-    private String accoutName;
+    private String accountName;
     @ManyToMany(mappedBy = "accounts")
     private List<Customer> customer = new ArrayList<>();
     @OneToMany (mappedBy = "account")
@@ -27,12 +27,12 @@ public class Account {
         this.accountId = accountId;
     }
 
-    public String getAccoutName() {
-        return accoutName;
+    public String getAccountName() {
+        return accountName;
     }
 
-    public void setAccoutName(String accoutName) {
-        this.accoutName = accoutName;
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
     }
 
     public List<Transaction> getTransaction() {

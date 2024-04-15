@@ -45,4 +45,7 @@ public class CustomerService {
     public List<Customer> findByNameAndLocalDateOnly(String name, LocalDate localDate) {
         return customerRepository.findExactlyByNameAndLocalDateOnly(name, localDate);
     }
+    public List <Customer> findAllCustomersWithPerformance(){
+        return customerRepository.findAllCustomersWithPerformance();
+    }
 }
