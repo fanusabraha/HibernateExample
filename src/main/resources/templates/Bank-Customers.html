@@ -35,12 +35,13 @@
 
     </div>
 
-    <div th:unless ="${#lists.size(customers) ==1}" th:each="bankers: ${customers}">
-        many Customers <br>
+    <div th:unless ="${#lists.size(customers) ==1}" th:each="bankers: ${customers}" many Customers >
+        <br>
         <span  th:text="${bankers.userId}" >  </span> <br>
         <span  th:text="${bankers.name}" > </span> <br>
-        <span  th:text="${bankers.password}" type="password"> </span> <br>
         <span  th:text="${bankers.username}" > </span> <br>
+        <span  th:text="${bankers.password}" type="password"> </span> <br>
+        <hr>
 
     </div>
 

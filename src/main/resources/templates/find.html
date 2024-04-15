@@ -7,19 +7,20 @@
 <body>
 <h1> finding users by name </h1>
 
-        <form action="" method="" >
+        <div  th:each="one: ${findhim}">
 
             <div
-                 type="text" th:field ="${newCustomer.username}">
-            </div>
+                    th:text ="${one.name}">
+            </div> <br>
             <div
-                    type="text" th:field ="${newCustomer.name}">
-            </div>
-            <div
-                    type="password" th:field ="${newCustomer.password}">
-            </div>
+                  th:text ="${one.username}">
+            </div> <br>
 
-        </form>
+            <div
+                     th:text ="${one.password}">
+            </div> <br>
+
+        </div>
 
 </body>
 </html>

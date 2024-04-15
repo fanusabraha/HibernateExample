@@ -32,8 +32,8 @@ public class CustomerService {
         return customerRepository.findByName(name);
     }
 
-    public List<Customer> findByPassword(String password){
-        return customerRepository.findByPassword(password);
+    public List<Customer> findByNameAndUsername(String name, String username){
+        return customerRepository.findByNameAndUsername(name, username);
     }
 
 }

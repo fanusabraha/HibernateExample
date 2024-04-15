@@ -54,11 +54,12 @@ public class CustomerController {
     public String deleteCustomer (@PathVariable long Id){
         customerService.deleteCustomer(Id);
         return "redirect:/customers";}
-    @GetMapping("/{name}")
-    public String findByName(ModelMap mapp, @PathVariable String name){
-     List<Customer> userList = customerService.findByName(name);
-     mapp.put("find",userList);
-    return "";
+    @GetMapping("/{name}/{username}")
+    public String findByName(ModelMap map, @PathVariable String name, @PathVariable String username){
+     //List<Customer> userList = customerService.findByName(name);
+        List<Customer> userList = customerService.findByNameAndUsername(name, username);
+        map.put("findhim",userList);
+        return "find";
     }
 
 }
