@@ -5,7 +5,7 @@
     <title>CustomersList</title>
 </head>
 <body>
-<h1> finding users by name </h1>
+<h1> Applying custom query users by name </h1>
 
         <div  th:each="one: ${findhim}">
 
@@ -15,11 +15,13 @@
             <div
                   th:text ="${one.username}">
             </div> <br>
-
+            <div
+                    th:text ="${one.localDate}">
+            </div> <br>
             <div
                      th:text ="${one.password}">
             </div> <br>
-
+            <hr>
         </div>
 
 </body>

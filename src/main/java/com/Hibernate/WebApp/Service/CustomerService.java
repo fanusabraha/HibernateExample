@@ -38,7 +38,11 @@ public class CustomerService {
     }
 
     public List<Customer> findByStartDateBetween (LocalDate date1, LocalDate date2){
-        return customerRepository.findByCreatedDateBetween(date1, date2);
+        return customerRepository.findByLocalDateBetween(date1, date2);
     }
 
+
+    public Customer findByNameAndLocalDateOnly(String name, LocalDate localDate) {
+        return customerRepository.findByNameAndLocalDateOnly(name,localDate);
+    }
 }
