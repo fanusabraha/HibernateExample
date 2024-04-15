@@ -1,6 +1,8 @@
 package com.Hibernate.WebApp.domain;
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +16,7 @@ public class Customer {
     private String name;
     @Column (length = 100)
     private String username;
+    private LocalDate localDate;
     @OneToOne  (mappedBy = "customer")
     private Adress adress;
     @ManyToMany()   @JoinTable(name="customer_account",
@@ -52,6 +55,14 @@ public class Customer {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public LocalDate getLocalDate() {
+        return localDate;
+    }
+
+    public void setLocalDate(LocalDate localDate) {
+        this.localDate = localDate;
     }
 
     public Adress getAdress() {

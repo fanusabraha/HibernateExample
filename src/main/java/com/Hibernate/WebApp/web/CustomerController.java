@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -55,10 +56,11 @@ public class CustomerController {
         customerService.deleteCustomer(Id);
         return "redirect:/customers";}
     @GetMapping("/{name}/{username}")
-    public String findByName(ModelMap map, @PathVariable String name, @PathVariable String username){
-     //List<Customer> userList = customerService.findByName(name);
-        List<Customer> userList = customerService.findByNameAndUsername(name, username);
-        map.put("findhim",userList);
+    public String findByName(ModelMap map, @PathVariable LocalDate name, @PathVariable LocalDate username){
+        //List<Customer> userList = customerService.findByName(name);
+        List<Customer> findByStartDateBetween= customerService.findByStartDateBetween(name,username);
+        //List<Customer> userList = customerService.findByNameAndUsername(name, username);
+        map.put("findhim",findByStartDateBetween);
         return "find";
     }
 
