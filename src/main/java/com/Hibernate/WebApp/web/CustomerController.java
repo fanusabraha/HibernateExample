@@ -29,7 +29,6 @@ public class CustomerController {
         map.put("customers",oneCustomer);
         // this is for the updating model
         map.put("newCustomer",oneCustomer);
-
         return "Bank-Customers";}
 
     // a new class can be created for this GetMapping
@@ -55,4 +54,11 @@ public class CustomerController {
     public String deleteCustomer (@PathVariable long Id){
         customerService.deleteCustomer(Id);
         return "redirect:/customers";}
+    @GetMapping("/{name}")
+    public String findByName(ModelMap mapp, @PathVariable String name){
+     List<Customer> userList = customerService.findByName(name);
+     mapp.put("find",userList);
+    return "";
+    }
+
 }

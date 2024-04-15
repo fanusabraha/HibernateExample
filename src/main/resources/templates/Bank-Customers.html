@@ -11,7 +11,7 @@
     <div th:if="${#lists.size(customers) ==1}">
         <!-- this is for updating the customer we used if customer >1 -->
         <form action="" method="post" >
-            this is only one user
+            Only one user
             <div> Username
                 <input type="text" th:field ="${newCustomer.username}">
             </div>
@@ -34,11 +34,13 @@
         </form>
 
     </div>
+
     <div th:unless ="${#lists.size(customers) ==1}" th:each="bankers: ${customers}">
-        <span  th:text="${bankers.userId}" >  </span>
-        <span  th:text="${bankers.name}" > </span>
-        <span  th:text="${bankers.password}" type="password"> </span>
-        <span  th:text="${bankers.username}" > </span>
+        many Customers <br>
+        <span  th:text="${bankers.userId}" >  </span> <br>
+        <span  th:text="${bankers.name}" > </span> <br>
+        <span  th:text="${bankers.password}" type="password"> </span> <br>
+        <span  th:text="${bankers.username}" > </span> <br>
 
     </div>
 

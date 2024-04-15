@@ -28,4 +28,12 @@ public class CustomerService {
     public void deleteCustomer(long id) {
         customerRepository.deleteById(id);
     }
+    public List<Customer> findByName(String name){
+        return customerRepository.findByName(name);
+    }
+
+    public List<Customer> findByPassword(String password){
+        return customerRepository.findByPassword(password);
+    }
+
 }
