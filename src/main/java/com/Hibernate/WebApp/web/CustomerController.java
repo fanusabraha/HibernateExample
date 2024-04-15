@@ -61,7 +61,7 @@ public class CustomerController {
         //List<Customer> userList = customerService.findByName(name);
         //List<Customer> findByStartDateBetween= customerService.findByStartDateBetween(name,username);
         //List<Customer> userList = customerService.findByNameAndUsername(name, username);
-        Customer cus = customerService.findByNameAndLocalDateOnly(name, username);
+        List <Customer> cus = customerService.findByNameAndLocalDateOnly(name,username);
         map.put("findhim",cus);
         return "find";
     }

@@ -21,7 +21,10 @@ public interface CustomerRepository extends JpaRepository<Customer,Long> {
 
     // void method of customers
     void findByUsername(String Username);
-    // creating custom queries JPQL
-    @Query("select c Customer c where name=:name and localDate=:localDate Desc")
-    Customer findByNameAndLocalDateOnly(String name, LocalDate localDate);
+    // creating custom queries JPQL, we use alies not star
+    @Query("select c From Customer c where name=:name and localDate= :localDate")
+    List <Customer> findExactlyByNameAndLocalDateOnly(String name, LocalDate localDate);
+
+    // lazy fetching is better at performance but the eager type is slower bc it selects them all
+    // by default many to many or one to many is lazy and one to one is eagerly fetching type
 }

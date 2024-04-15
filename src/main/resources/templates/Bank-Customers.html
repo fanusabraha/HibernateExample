@@ -19,6 +19,9 @@
                 <input type="text" th:field ="${newCustomer.name}">
             </div>
             <div> Password
+                <input type="date" th:field ="${newCustomer.localDate}">
+            </div>
+            <div> Password
                 <input type="password" th:field ="${newCustomer.password}">
             </div>
             <div>
@@ -40,6 +43,7 @@
         <span  th:text="${bankers.userId}" >  </span> <br>
         <span  th:text="${bankers.name}" > </span> <br>
         <span  th:text="${bankers.username}" > </span> <br>
+        <span  th:text="${bankers.localDate}" > </span> <br>
         <span  th:text="${bankers.password}" type="password"> </span> <br>
         <hr>
 

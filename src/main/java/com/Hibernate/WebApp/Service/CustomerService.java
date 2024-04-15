@@ -42,7 +42,7 @@ public class CustomerService {
     }
 
 
-    public Customer findByNameAndLocalDateOnly(String name, LocalDate localDate) {
-        return customerRepository.findByNameAndLocalDateOnly(name,localDate);
+    public List<Customer> findByNameAndLocalDateOnly(String name, LocalDate localDate) {
+        return customerRepository.findExactlyByNameAndLocalDateOnly(name, localDate);
     }
 }
