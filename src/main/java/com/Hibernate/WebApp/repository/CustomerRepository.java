@@ -29,8 +29,8 @@ public interface CustomerRepository extends JpaRepository<Customer,Long> {
     // by default many to many or one to many is lazy and one to one is eagerly fetching type
 
     // to minimize the long listing of select line (fast performance) a special query will be
-    // created which selects only the needed in one line
-    @Query ("select c from Customer c left join c.accounts left join c.adress ")
+    // created which selects only the needed in one line. after this there should be only one select line
+    @Query ("select c from Customer c left join fetch c.accounts left join fetch c.adress  ")
     List<Customer> findAllCustomersWithPerformance();
     // Notice when using query tables name are from the sql table names not java class
 }
